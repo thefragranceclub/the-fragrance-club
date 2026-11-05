@@ -191,6 +191,31 @@
    "mayoreo": 650,
    "img": "img/8.webp",
    "notas": "img/notas-8.webp",
+   "piramide": {
+    "salida": [
+     "Cardamomo",
+     "Mandarina",
+     "Neroli"
+    ],
+    "corazon": [
+     "Flor de azahar del naranjo",
+     "Rosa"
+    ],
+    "base": [
+     "Vainilla",
+     "Ámbar",
+     "Notas amaderadas",
+     "Sándalo"
+    ]
+   },
+   "uso": {
+    "invierno": 1700,
+    "primavera": 806,
+    "verano": 254,
+    "otono": 1600,
+    "dia": 768,
+    "noche": 1600
+   },
    "stock": 3
   },
   {
