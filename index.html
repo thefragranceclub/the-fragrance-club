@@ -35,7 +35,7 @@ h1 img{display:block;width:min(100%,430px);height:auto}
 .tag{font-family:var(--serif);font-size:clamp(25px,3.2vw,34px);line-height:1.15;margin:30px 0 0;text-wrap:balance}
 .lede{font-size:18px;margin:12px 0 0;max-width:27em;color:#F0EBE4}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.stage{position:relative;height:430px}
+.stage{position:relative;height:430px;pointer-events:none}
 .stage::before{content:"";position:absolute;z-index:0;left:-8%;right:-8%;top:2%;bottom:6%;pointer-events:none;background:radial-gradient(50% 58% at 50% 58%,rgba(255,182,112,.5),transparent 74%);filter:blur(16px);animation:respira 8s ease-in-out infinite alternate}
 .pz{position:absolute;margin:0;width:var(--w);left:var(--x);bottom:var(--y);z-index:var(--z)}
 .pz>img{display:block;width:100%;height:auto;position:relative;z-index:1;filter:var(--tono) drop-shadow(0 0 1.5px rgba(255,214,164,.6)) drop-shadow(0 0 16px rgba(255,176,104,.34))}
@@ -230,9 +230,9 @@ footer img{height:56px;width:auto}
 <script>
 try{history.scrollRestoration="manual"}catch(e){}
 const alInicio=()=>scrollTo({top:0,behavior:"instant"});let tocoPantalla=false;
-["touchstart","pointerdown","wheel","keydown"].forEach(t=>addEventListener(t,()=>{tocoPantalla=true},{once:true,passive:true,capture:true}));
+["touchstart","pointerdown","wheel","keydown"].forEach(t=>addEventListener(t,()=>{tocoPantalla=true},{passive:true,capture:true}));
 function vigilaInicio(desde){const t=performance.now();if(!desde)desde=t;if(tocoPantalla||t-desde>4000)return;if(scrollY>0)alInicio();requestAnimationFrame(()=>vigilaInicio(desde))}
-alInicio();vigilaInicio();addEventListener("load",()=>{alInicio();vigilaInicio()});addEventListener("pageshow",()=>{tocoPantalla=false;alInicio();vigilaInicio()});
+alInicio();vigilaInicio();addEventListener("load",()=>{alInicio();vigilaInicio()});addEventListener("pageshow",e=>{if(e.persisted){tocoPantalla=false;alInicio();vigilaInicio()}});
 const $=s=>document.querySelector(s);
 const mx=n=>"$"+Math.round(n).toLocaleString("es-MX");
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
