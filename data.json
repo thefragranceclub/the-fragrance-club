@@ -13,6 +13,7 @@
    "menudeo": 750,
    "mayoreo": 650,
    "img": "img/1.webp",
+   "notas": "",
    "stock": 2
   },
   {
@@ -22,6 +23,7 @@
    "menudeo": 750,
    "mayoreo": 650,
    "img": "img/2.webp",
+   "notas": "",
    "stock": 2
   },
   {
@@ -31,6 +33,7 @@
    "menudeo": 750,
    "mayoreo": 650,
    "img": "img/3.webp",
+   "notas": "",
    "stock": 2
   },
   {
@@ -40,6 +43,7 @@
    "menudeo": 750,
    "mayoreo": 650,
    "img": "img/4.webp",
+   "notas": "",
    "stock": 2
   },
   {
@@ -49,6 +53,7 @@
    "menudeo": 560,
    "mayoreo": 460,
    "img": "img/5.webp",
+   "notas": "",
    "stock": 1
   },
   {
@@ -58,6 +63,7 @@
    "menudeo": 590,
    "mayoreo": 490,
    "img": "img/6.webp",
+   "notas": "",
    "stock": 1
   },
   {
@@ -67,6 +73,7 @@
    "menudeo": 690,
    "mayoreo": 590,
    "img": "img/7.webp",
+   "notas": "",
    "stock": 5
   },
   {
@@ -76,6 +83,7 @@
    "menudeo": 750,
    "mayoreo": 650,
    "img": "img/8.webp",
+   "notas": "",
    "stock": 3
   },
   {
@@ -85,6 +93,7 @@
    "menudeo": 750,
    "mayoreo": 650,
    "img": "img/9.webp",
+   "notas": "",
    "stock": 2
   },
   {
@@ -94,6 +103,7 @@
    "menudeo": 799,
    "mayoreo": 699,
    "img": "img/10.webp",
+   "notas": "",
    "stock": 1
   },
   {
@@ -103,6 +113,7 @@
    "menudeo": 800,
    "mayoreo": 700,
    "img": "img/11.webp",
+   "notas": "",
    "stock": 4
   },
   {
@@ -112,6 +123,7 @@
    "menudeo": 850,
    "mayoreo": 750,
    "img": "img/12.webp",
+   "notas": "",
    "stock": 3
   },
   {
@@ -121,6 +133,7 @@
    "menudeo": 890,
    "mayoreo": 790,
    "img": "img/13.webp",
+   "notas": "",
    "stock": 1
   },
   {
@@ -130,6 +143,7 @@
    "menudeo": 1699,
    "mayoreo": 1599,
    "img": "img/14.webp",
+   "notas": "",
    "stock": 1
   },
   {
@@ -139,6 +153,7 @@
    "menudeo": 1890,
    "mayoreo": 1790,
    "img": "img/15.webp",
+   "notas": "",
    "stock": 1
   },
   {
@@ -148,6 +163,7 @@
    "menudeo": 1990,
    "mayoreo": 1890,
    "img": "img/16.webp",
+   "notas": "",
    "stock": 1
   },
   {
@@ -157,6 +173,7 @@
    "menudeo": 2100,
    "mayoreo": 1999,
    "img": "img/17.webp",
+   "notas": "",
    "stock": 2
   }
  ]
