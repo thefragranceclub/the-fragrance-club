@@ -54,6 +54,30 @@
    "mayoreo": 460,
    "img": "img/5.webp",
    "notas": "img/notas-5.webp",
+   "piramide": {
+    "salida": [
+     "Azafrán",
+     "Nuez moscada",
+     "Lavanda"
+    ],
+    "corazon": [
+     "Madera de oud",
+     "Notas amaderadas"
+    ],
+    "base": [
+     "Almizcle",
+     "Ambroxan",
+     "Pachulí"
+    ]
+   },
+   "uso": {
+    "invierno": 186,
+    "primavera": 87,
+    "verano": 29,
+    "otono": 163,
+    "dia": 73,
+    "noche": 171
+   },
    "stock": 1
   },
   {
