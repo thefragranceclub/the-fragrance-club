@@ -445,6 +445,25 @@
    "mayoreo": 790,
    "img": "img/13.webp",
    "notas": "img/notas-13.webp",
+   "piramide": {
+    "salida": [
+     "Cardamomo"
+    ],
+    "corazon": [
+     "Toffee"
+    ],
+    "base": [
+     "Madera de ámbar"
+    ]
+   },
+   "uso": {
+    "invierno": 9100,
+    "primavera": 2500,
+    "verano": 895,
+    "otono": 7800,
+    "dia": 2700,
+    "noche": 8100
+   },
    "stock": 1
   },
   {
