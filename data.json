@@ -14,6 +14,34 @@
    "mayoreo": 650,
    "img": "img/1.webp",
    "notas": "img/notas-1.webp",
+   "piramide": {
+    "salida": [
+     "Naranja",
+     "Bergamota",
+     "Toronja (pomelo)",
+     "Durazno (melocotón)"
+    ],
+    "corazon": [
+     "Rosa",
+     "Jazmín",
+     "Geranio",
+     "Lichi"
+    ],
+    "base": [
+     "Pachulí",
+     "Almizcle",
+     "Vainilla",
+     "Vetiver"
+    ]
+   },
+   "uso": {
+    "invierno": 848,
+    "primavera": 1400,
+    "verano": 1200,
+    "otono": 1200,
+    "dia": 1400,
+    "noche": 959
+   },
    "stock": 2
   },
   {
