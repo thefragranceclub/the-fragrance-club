@@ -86,6 +86,30 @@
    "mayoreo": 650,
    "img": "img/3.webp",
    "notas": "img/notas-3.webp",
+   "piramide": {
+    "salida": [
+     "Orquídea",
+     "Heliotropo",
+     "Naranja tangerina"
+    ],
+    "corazon": [
+     "Acorde goloso",
+     "Frutas tropicales"
+    ],
+    "base": [
+     "Vainilla",
+     "Almizcle",
+     "Sándalo"
+    ]
+   },
+   "uso": {
+    "invierno": 2700,
+    "primavera": 5600,
+    "verano": 4400,
+    "otono": 3000,
+    "dia": 5900,
+    "noche": 1800
+   },
    "stock": 2
   },
   {
