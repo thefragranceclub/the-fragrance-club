@@ -88,6 +88,35 @@
    "mayoreo": 490,
    "img": "img/6.webp",
    "notas": "img/notas-6.webp",
+   "piramide": {
+    "salida": [
+     "Caramelo",
+     "Cereza",
+     "Canela",
+     "Lactonas",
+     "Flores blancas"
+    ],
+    "corazon": [
+     "Dátiles",
+     "Miel",
+     "Nuez moscada"
+    ],
+    "base": [
+     "Praliné",
+     "Vainilla",
+     "Haba tonka",
+     "Notas amaderadas",
+     "Almizcle"
+    ]
+   },
+   "uso": {
+    "invierno": 116,
+    "primavera": 33,
+    "verano": 4,
+    "otono": 95,
+    "dia": 51,
+    "noche": 83
+   },
    "stock": 1
   },
   {
