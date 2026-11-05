@@ -102,6 +102,14 @@
      "Sándalo"
     ]
    },
+   "uso": {
+    "invierno": 485,
+    "primavera": 1300,
+    "verano": 1400,
+    "otono": 581,
+    "dia": 1500,
+    "noche": 428
+   },
    "stock": 2
   },
   {
@@ -328,6 +336,34 @@
    "mayoreo": 699,
    "img": "img/10.webp",
    "notas": "img/notas-10.webp",
+   "piramide": {
+    "salida": [
+     "Martini",
+     "Hoja de violeta",
+     "Mandarina",
+     "Albahaca"
+    ],
+    "corazon": [
+     "Canela",
+     "Lavanda",
+     "Flor de jengibre",
+     "Azahar"
+    ],
+    "base": [
+     "Vainilla",
+     "Ámbar",
+     "Cuero",
+     "Almizcle"
+    ]
+   },
+   "uso": {
+    "invierno": 1300,
+    "primavera": 548,
+    "verano": 204,
+    "otono": 1300,
+    "dia": 618,
+    "noche": 1300
+   },
    "stock": 1
   },
   {
@@ -338,6 +374,31 @@
    "mayoreo": 700,
    "img": "img/11.webp",
    "notas": "img/notas-11.webp",
+   "piramide": {
+    "salida": [
+     "Lavanda",
+     "Ciruela mirabel",
+     "Pimienta rosa"
+    ],
+    "corazon": [
+     "Cacao",
+     "Nuez moscada",
+     "Davana"
+    ],
+    "base": [
+     "Vainilla Bourbon",
+     "Ámbar",
+     "Vetiver"
+    ]
+   },
+   "uso": {
+    "invierno": 5200,
+    "primavera": 1700,
+    "verano": 522,
+    "otono": 4400,
+    "dia": 2200,
+    "noche": 4500
+   },
    "stock": 4
   },
   {
@@ -348,6 +409,32 @@
    "mayoreo": 750,
    "img": "img/12.webp",
    "notas": "img/notas-12.webp",
+   "piramide": {
+    "salida": [
+     "Pimienta rosa",
+     "Azafrán",
+     "Toronja"
+    ],
+    "corazon": [
+     "Tabaco",
+     "Vainilla",
+     "Cedro"
+    ],
+    "base": [
+     "Ámbar",
+     "Incienso",
+     "Pachulí",
+     "Cashmeran"
+    ]
+   },
+   "uso": {
+    "invierno": 2100,
+    "primavera": 678,
+    "verano": 192,
+    "otono": 1800,
+    "dia": 748,
+    "noche": 1900
+   },
    "stock": 3
   },
   {
@@ -368,6 +455,28 @@
    "mayoreo": 1599,
    "img": "img/14.webp",
    "notas": "img/notas-14.webp",
+   "piramide": {
+    "salida": [
+     "Absenta",
+     "Anís",
+     "Hinojo"
+    ],
+    "corazon": [
+     "Lavanda"
+    ],
+    "base": [
+     "Vainilla negra",
+     "Almizcle"
+    ]
+   },
+   "uso": {
+    "invierno": 2500,
+    "primavera": 1200,
+    "verano": 489,
+    "otono": 2200,
+    "dia": 716,
+    "noche": 2700
+   },
    "stock": 1
   },
   {
@@ -378,6 +487,27 @@
    "mayoreo": 1790,
    "img": "img/15.webp",
    "notas": "img/notas-15.webp",
+   "piramide": {
+    "salida": [
+     "Mandarina",
+     "Salvia"
+    ],
+    "corazon": [
+     "Caramelo",
+     "Haba tonka"
+    ],
+    "base": [
+     "Vetiver"
+    ]
+   },
+   "uso": {
+    "invierno": 4800,
+    "primavera": 2500,
+    "verano": 1000,
+    "otono": 4400,
+    "dia": 2300,
+    "noche": 4500
+   },
    "stock": 1
   },
   {
@@ -388,6 +518,30 @@
    "mayoreo": 1890,
    "img": "img/16.webp",
    "notas": "img/notas-16.webp",
+   "piramide": {
+    "salida": [
+     "Pimienta rosa",
+     "Mandarina"
+    ],
+    "corazon": [
+     "Lavanda",
+     "Canela",
+     "Salvia"
+    ],
+    "base": [
+     "Vainilla",
+     "Castaña",
+     "Cuero"
+    ]
+   },
+   "uso": {
+    "invierno": 2400,
+    "primavera": 517,
+    "verano": 184,
+    "otono": 2000,
+    "dia": 721,
+    "noche": 2100
+   },
    "stock": 1
   },
   {
@@ -398,6 +552,33 @@
    "mayoreo": 1999,
    "img": "img/17.webp",
    "notas": "img/notas-17.webp",
+   "piramide": {
+    "salida": [
+     "Pimienta rosa",
+     "Enebro",
+     "Violeta"
+    ],
+    "corazon": [
+     "Toffee",
+     "Canela",
+     "Lavanda",
+     "Salvia"
+    ],
+    "base": [
+     "Vainilla",
+     "Ámbar",
+     "Haba tonka",
+     "Gamuza"
+    ]
+   },
+   "uso": {
+    "invierno": 21300,
+    "primavera": 3100,
+    "verano": 1600,
+    "otono": 16500,
+    "dia": 7300,
+    "noche": 17000
+   },
    "stock": 2
   }
  ]
