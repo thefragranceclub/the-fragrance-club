@@ -278,7 +278,7 @@ let viaApp=false;
 function verDetalle(id){const p=prod(id);if(!p)return;const t=parts(p.nombre),b=label(p.stock),c=INK[p.id%INK.length];
  $("#dwrap").innerHTML=`<section class="dtop">${p.notas?`<div class="dnota"><img src="${esc(p.notas)}" alt="Notas de ${esc(t.name)}"></div>`:`<div class="dpic">${p.img?`<img src="${esc(p.img)}" alt="${esc(p.nombre)}">`:bottle(c)}</div>`}<div class="dinfo"><span class="dbadge ${b[0]}">${b[1]}</span><span class="brand">${esc(t.brand)}</span><h2 class="name" id="dnom">${esc(t.name)}</h2><span class="ml">${esc(t.ml)}</span><div class="prices"><div><span>Menudeo</span><b>${mx(p.menudeo)}</b></div><div class="may"><span>Mayoreo</span><b>${mx(p.mayoreo)}</b></div></div><div class="addwrap" data-add="${p.id}">${addHTML(p)}</div><div id="dver"></div>${p.notas?"":`<p class="dpron">Muy pronto verás aquí las notas de este perfume.</p>`}</div></section>${masHTML(p)}`;
  const d=$("#det");d.hidden=false;void d.offsetWidth;d.classList.add("on");$("#dwrap").scrollTop=0;document.documentElement.style.overflow="hidden";$("#dsheet").focus();pinta()}
-function ocultaDetalle(){const d=$("#det");if(d.hidden)return;d.classList.remove("on");d.hidden=true;if(!$("#cart").classList.contains("on"))document.documentElement.style.overflow=""}
+function ocultaDetalle(){const d=$("#det");if(d.hidden)return;$("#dsheet").style.transform="";d.classList.remove("on");d.hidden=true;if(!$("#cart").classList.contains("on"))document.documentElement.style.overflow=""}
 function abreHash(){const m=location.hash.match(/^#perfume-(\d+)$/);if(m)verDetalle(m[1]);else ocultaDetalle()}
 function salirDetalle(){if(viaApp){viaApp=false;history.back()}else{history.replaceState(null,"",location.pathname+location.search);ocultaDetalle()}}
 function abrir(){$("#cart").classList.add("on");$("#scrim").classList.add("on");document.documentElement.style.overflow="hidden";$("#cart").focus()}
@@ -309,6 +309,11 @@ function start(d){D=d;
  $("#foot").textContent="Precios en pesos mexicanos. Disponibilidad sujeta a confirmación al hacer tu pedido.";
  grid();pinta();abreHash();addEventListener("hashchange",abreHash)}
 fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(start).catch(()=>{$("#grid").innerHTML='<p class="none" style="grid-column:1/-1">No se pudo cargar el catálogo. Recarga la página.</p>'});
+(function(){const sh=$("#dsheet"),wr=$("#dwrap");let y0=0,t0=0,dy=0,listo=false,arrastra=false;
+ const suelta=()=>{listo=false;if(!arrastra)return;arrastra=false;sh.style.transition="";const rapido=dy/(Date.now()-t0)>.5&&dy>40;if(dy>Math.min(140,sh.offsetHeight*.25)||rapido){sh.style.transform="translateY(100%)";setTimeout(salirDetalle,240)}else sh.style.transform=""};
+ sh.addEventListener("touchstart",e=>{if(innerWidth>760||e.touches.length>1)return;listo=wr.scrollTop<=0;y0=e.touches[0].clientY;t0=Date.now();dy=0;arrastra=false},{passive:true});
+ sh.addEventListener("touchmove",e=>{if(!listo)return;dy=e.touches[0].clientY-y0;if(!arrastra){if(dy<-6){listo=false;return}if(dy<=6)return;arrastra=true;sh.style.transition="none"}e.preventDefault();sh.style.transform=`translateY(${Math.max(0,dy)}px)`},{passive:false});
+ sh.addEventListener("touchend",suelta);sh.addEventListener("touchcancel",suelta)})();
 $("#dback").onclick=salirDetalle;$("#det").onclick=e=>{if(e.target.id==="det")salirDetalle()};document.addEventListener("keydown",e=>{const v=e.target.closest&&e.target.closest(".pic[data-ver]");if(v&&(e.key==="Enter"||e.key===" ")){e.preventDefault();v.click()}});
 $("#cclose").onclick=cerrar;$("#scrim").onclick=cerrar;addEventListener("keydown",e=>{if(e.key==="Escape"){if($("#cart").classList.contains("on"))cerrar();else if(!$("#det").hidden)salirDetalle()}});
 $("#verCat").onclick=e=>{e.preventDefault();$("#catalogo").scrollIntoView()};
