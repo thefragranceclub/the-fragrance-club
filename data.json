@@ -226,6 +226,33 @@
    "mayoreo": 650,
    "img": "img/9.webp",
    "notas": "img/notas-9.webp",
+   "piramide": {
+    "salida": [
+     "Pimienta negra",
+     "Tabaco",
+     "Piña"
+    ],
+    "corazon": [
+     "Pachulí",
+     "Café",
+     "Iris"
+    ],
+    "base": [
+     "Vainilla",
+     "Ámbar",
+     "Madera seca",
+     "Benjuí",
+     "Ládano"
+    ]
+   },
+   "uso": {
+    "invierno": 10200,
+    "primavera": 4600,
+    "verano": 1800,
+    "otono": 8900,
+    "dia": 4800,
+    "noche": 9200
+   },
    "stock": 2
   },
   {
