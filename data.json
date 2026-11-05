@@ -112,6 +112,31 @@
    "mayoreo": 650,
    "img": "img/4.webp",
    "notas": "img/notas-4.webp",
+   "piramide": {
+    "salida": [
+     "Mango",
+     "Coco",
+     "Maracuyá (fruta de la pasión)"
+    ],
+    "corazon": [
+     "Jazmín",
+     "Flor de azahar del naranjo",
+     "Heliotropo"
+    ],
+    "base": [
+     "Vainilla",
+     "Almizcle",
+     "Cachemira"
+    ]
+   },
+   "uso": {
+    "invierno": 270,
+    "primavera": 1400,
+    "verano": 2400,
+    "otono": 516,
+    "dia": 2200,
+    "noche": 463
+   },
    "stock": 2
   },
   {
