@@ -1,0 +1,162 @@
+{
+ "marca": "The Fragrance Club",
+ "whatsapp": "",
+ "comunidad": "https://chat.whatsapp.com/JG6rmJX6wkm3izOZ8E42wO?s=sh&p=i&mlu=4&ilr=4&iam=2",
+ "mayoreoMin": 4,
+ "actualizado": "2026-11-04",
+ "productos": [
+  {
+   "id": 1,
+   "nombre": "Armaf Club de Nuit Woman 105 ml EDP",
+   "categoria": "Mujer",
+   "menudeo": 750,
+   "mayoreo": 650,
+   "img": "img/1.webp",
+   "stock": 2
+  },
+  {
+   "id": 2,
+   "nombre": "Lattafa Yara 100 ml EDP",
+   "categoria": "Mujer",
+   "menudeo": 750,
+   "mayoreo": 650,
+   "img": "img/2.webp",
+   "stock": 2
+  },
+  {
+   "id": 3,
+   "nombre": "Lattafa Yara Candy 100 ml EDP",
+   "categoria": "Mujer",
+   "menudeo": 750,
+   "mayoreo": 650,
+   "img": "img/3.webp",
+   "stock": 2
+  },
+  {
+   "id": 4,
+   "nombre": "Lattafa Yara Tous 100 ml EDP",
+   "categoria": "Mujer",
+   "menudeo": 750,
+   "mayoreo": 650,
+   "img": "img/4.webp",
+   "stock": 2
+  },
+  {
+   "id": 5,
+   "nombre": "Armaf Odyssey Aoud 100 ml EDP",
+   "categoria": "Hombre",
+   "menudeo": 560,
+   "mayoreo": 460,
+   "img": "img/5.webp",
+   "stock": 1
+  },
+  {
+   "id": 6,
+   "nombre": "Armaf Odyssey Black Forest 100 ml EDP",
+   "categoria": "Hombre",
+   "menudeo": 590,
+   "mayoreo": 490,
+   "img": "img/6.webp",
+   "stock": 1
+  },
+  {
+   "id": 7,
+   "nombre": "Afnan 9pm 100 ml EDP",
+   "categoria": "Hombre",
+   "menudeo": 690,
+   "mayoreo": 590,
+   "img": "img/7.webp",
+   "stock": 5
+  },
+  {
+   "id": 8,
+   "nombre": "Armaf Odyssey Homme 100 ml EDP",
+   "categoria": "Hombre",
+   "menudeo": 750,
+   "mayoreo": 650,
+   "img": "img/8.webp",
+   "stock": 3
+  },
+  {
+   "id": 9,
+   "nombre": "Lattafa Asad 100 ml EDP",
+   "categoria": "Hombre",
+   "menudeo": 750,
+   "mayoreo": 650,
+   "img": "img/9.webp",
+   "stock": 2
+  },
+  {
+   "id": 10,
+   "nombre": "Halloween Man 100 ml EDT",
+   "categoria": "Hombre",
+   "menudeo": 799,
+   "mayoreo": 699,
+   "img": "img/10.webp",
+   "stock": 1
+  },
+  {
+   "id": 11,
+   "nombre": "Lattafa Asad Bourbon 100 ml EDP",
+   "categoria": "Hombre",
+   "menudeo": 800,
+   "mayoreo": 700,
+   "img": "img/11.webp",
+   "stock": 4
+  },
+  {
+   "id": 12,
+   "nombre": "Lattafa Asad Elixir 100 ml EDP",
+   "categoria": "Hombre",
+   "menudeo": 850,
+   "mayoreo": 750,
+   "img": "img/12.webp",
+   "stock": 3
+  },
+  {
+   "id": 13,
+   "nombre": "Azzaro The Most Wanted Intense 100 ml EDP",
+   "categoria": "Hombre",
+   "menudeo": 890,
+   "mayoreo": 790,
+   "img": "img/13.webp",
+   "stock": 1
+  },
+  {
+   "id": 14,
+   "nombre": "Carolina Herrera 212 VIP Black 100 ml EDP",
+   "categoria": "Hombre",
+   "menudeo": 1699,
+   "mayoreo": 1599,
+   "img": "img/14.webp",
+   "stock": 1
+  },
+  {
+   "id": 15,
+   "nombre": "Scandal Pour Homme 100 ml EDT",
+   "categoria": "Hombre",
+   "menudeo": 1890,
+   "mayoreo": 1790,
+   "img": "img/15.webp",
+   "stock": 1
+  },
+  {
+   "id": 16,
+   "nombre": "Emporio Armani Stronger With You Parfum 100 ml",
+   "categoria": "Hombre",
+   "menudeo": 1990,
+   "mayoreo": 1890,
+   "img": "img/16.webp",
+   "stock": 1
+  },
+  {
+   "id": 17,
+   "nombre": "Emporio Armani Stronger With You Intensely 100 ml EDP",
+   "categoria": "Hombre",
+   "menudeo": 2100,
+   "mayoreo": 1999,
+   "img": "img/17.webp",
+   "stock": 2
+  }
+ ]
+}
