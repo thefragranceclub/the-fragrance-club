@@ -13,7 +13,7 @@
    "menudeo": 750,
    "mayoreo": 650,
    "img": "img/1.webp",
-   "notas": "",
+   "notas": "img/notas-1.webp",
    "stock": 2
   },
   {
@@ -23,7 +23,7 @@
    "menudeo": 750,
    "mayoreo": 650,
    "img": "img/2.webp",
-   "notas": "",
+   "notas": "img/notas-2.webp",
    "stock": 2
   },
   {
@@ -33,7 +33,7 @@
    "menudeo": 750,
    "mayoreo": 650,
    "img": "img/3.webp",
-   "notas": "",
+   "notas": "img/notas-3.webp",
    "stock": 2
   },
   {
@@ -43,7 +43,7 @@
    "menudeo": 750,
    "mayoreo": 650,
    "img": "img/4.webp",
-   "notas": "",
+   "notas": "img/notas-4.webp",
    "stock": 2
   },
   {
@@ -63,7 +63,7 @@
    "menudeo": 590,
    "mayoreo": 490,
    "img": "img/6.webp",
-   "notas": "",
+   "notas": "img/notas-6.webp",
    "stock": 1
   },
   {
@@ -73,7 +73,7 @@
    "menudeo": 690,
    "mayoreo": 590,
    "img": "img/7.webp",
-   "notas": "",
+   "notas": "img/notas-7.webp",
    "stock": 5
   },
   {
@@ -83,7 +83,7 @@
    "menudeo": 750,
    "mayoreo": 650,
    "img": "img/8.webp",
-   "notas": "",
+   "notas": "img/notas-8.webp",
    "stock": 3
   },
   {
@@ -93,7 +93,7 @@
    "menudeo": 750,
    "mayoreo": 650,
    "img": "img/9.webp",
-   "notas": "",
+   "notas": "img/notas-9.webp",
    "stock": 2
   },
   {
@@ -103,7 +103,7 @@
    "menudeo": 799,
    "mayoreo": 699,
    "img": "img/10.webp",
-   "notas": "",
+   "notas": "img/notas-10.webp",
    "stock": 1
   },
   {
@@ -113,7 +113,7 @@
    "menudeo": 800,
    "mayoreo": 700,
    "img": "img/11.webp",
-   "notas": "",
+   "notas": "img/notas-11.webp",
    "stock": 4
   },
   {
