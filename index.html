@@ -142,29 +142,33 @@ footer img{height:56px;width:auto}
 .cempty b{display:block;font-family:var(--serif);font-size:24px;font-weight:500;color:var(--ink);margin-bottom:6px}
 
 .notas{all:unset;box-sizing:border-box;cursor:pointer;margin-top:12px;font-size:14.5px;font-weight:500;text-decoration:underline;text-underline-offset:3px;color:var(--ink)}
-.notas:focus-visible,.pic:focus-visible,.volver:focus-visible{outline:2px solid var(--warm-ink);outline-offset:3px}
+.notas:focus-visible,.pic:focus-visible{outline:2px solid var(--warm-ink);outline-offset:3px}
 .pic{cursor:pointer}
 .notas+.addwrap{margin-top:10px}
-.det{position:fixed;inset:0;z-index:31;background:var(--bg);overflow-y:auto;overscroll-behavior:contain;padding-top:env(safe-area-inset-top,0px);opacity:0;visibility:hidden;transition:opacity .22s,visibility .22s}
-.det.on{opacity:1;visibility:visible}
-.dbar{position:sticky;top:0;z-index:2;background:rgba(248,245,241,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.dbar>div{max-width:980px;margin:0 auto;min-height:62px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.volver{all:unset;cursor:pointer;font-size:15.5px;font-weight:500}
-.dwrap{max-width:980px;margin:0 auto;padding-block:26px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:26px}
-.dtop{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:30px;align-items:center}
-.dpic{min-height:400px;display:grid;place-items:center;position:relative;background:#CFCBC5 url(img/concreto-claro.webp) center/cover}
-.dpic img,.dpic svg{width:80%;max-height:350px;object-fit:contain;filter:drop-shadow(0 16px 14px rgba(30,26,20,.42))}
-.dinfo{display:grid;gap:3px}
-.dinfo .name{font-size:clamp(31px,4.4vw,42px);line-height:1.08}
+.det{position:fixed;inset:0;z-index:31;display:grid;place-items:center;padding:24px max(16px,env(safe-area-inset-right,0px)) 24px max(16px,env(safe-area-inset-left,0px));background:rgba(20,19,18,.42);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);opacity:0;transition:opacity .28s ease}
+.det.on{opacity:1}
+.dsheet{position:relative;display:flex;flex-direction:column;width:min(880px,100%);max-height:calc(100svh - 48px);overflow:hidden;background:var(--panel);border-radius:26px;box-shadow:0 32px 90px rgba(20,19,18,.38);transform:translateY(20px) scale(.97);transition:transform .42s cubic-bezier(.2,.85,.2,1);outline:none}
+.det.on .dsheet{transform:none}
+.dx{all:unset;position:absolute;top:13px;right:13px;z-index:3;box-sizing:border-box;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:rgba(20,19,18,.1);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--ink);font-size:21px;line-height:1;cursor:pointer;transition:background .2s}
+.dx:hover{background:rgba(20,19,18,.18)}
+.dx:focus-visible{outline:2px solid var(--warm-ink);outline-offset:2px}
+.dwrap{min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.dtop{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:stretch}
+.dpic{min-height:430px;display:grid;place-items:center;background:#CFCBC5 url(img/concreto-claro.webp) center/cover}
+.dpic img,.dpic svg{width:80%;max-height:360px;object-fit:contain;filter:drop-shadow(0 16px 14px rgba(30,26,20,.42))}
+.dinfo{display:grid;gap:3px;align-content:center;padding:34px 30px}
+.dinfo .name{font-size:clamp(30px,3.6vw,38px);line-height:1.08}
 .dinfo .ml{font-size:16px}
-.dinfo .prices b{font-size:28px}
-.dnota{background:#fff}
+.dinfo .prices b{font-size:27px}
+.vercart{all:unset;box-sizing:border-box;cursor:pointer;margin-top:12px;text-align:center;font-size:15px;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.vercart:focus-visible{outline:2px solid var(--warm-ink);outline-offset:3px}
+.dnota{display:grid;place-items:center;background:#fff}
 .dnota img{display:block;width:100%;height:auto}
 .dbadge{justify-self:start;font-size:13px;font-weight:500;padding:3px 10px;margin-bottom:9px;background:var(--ok-bg);color:var(--ok)}
 .dbadge.low{background:var(--low-bg);color:var(--warm-ink)}
 .dbadge.out{background:var(--out-bg);color:var(--out)}
 .dpron{margin:10px 0 0;color:var(--soft);font-size:14.5px}
-@media (max-width:760px){.dtop{grid-template-columns:minmax(0,1fr);gap:16px}.dpic{min-height:290px}.dpic img,.dpic svg{max-height:250px}.dwrap{padding-block:16px 40px}}
+@media (max-width:760px){.det{place-items:end center;padding:0}.dsheet{width:100%;max-height:92svh;border-radius:24px 24px 0 0;transform:translateY(100%);padding-bottom:env(safe-area-inset-bottom,0px)}.dsheet::before{content:"";position:absolute;top:8px;left:50%;z-index:3;width:38px;height:5px;margin-left:-19px;border-radius:99px;background:rgba(20,19,18,.22)}.dtop{grid-template-columns:minmax(0,1fr)}.dpic{min-height:270px}.dpic img,.dpic svg{max-height:230px}.dinfo{padding:18px 18px 22px}}
 .dock{display:none}
 .reveal{transition:transform .8s ease}.reveal.pre{transform:translateY(20px)}
 @media (max-width:900px){.hgrid{grid-template-columns:minmax(0,1fr);gap:16px;justify-items:stretch}.hgrid>div:first-child{display:contents}h1{order:1}h1 img{width:min(86%,340px);margin-inline:auto}.tag{order:2;margin:0;text-align:center;font-size:25px}.stage{order:3;height:min(290px,33svh);margin-block:6px}.lede{order:4;margin:0 auto;text-align:center}.cta{order:5;margin-top:4px;justify-content:center}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-block:22px 26px;min-height:calc(100svh - 63px);display:grid;align-content:center}.hero::before{background:linear-gradient(180deg,rgba(255,226,180,.24),transparent 24%),linear-gradient(180deg,rgba(18,17,16,.1) 40%,rgba(18,17,16,.5))}.light{left:10%;width:90%}}
@@ -201,10 +205,7 @@ footer img{height:56px;width:auto}
  <footer><img src="img/tfc-k.png" alt=""><span id="foot"></span></footer>
 </div>
 <div class="dock" id="dock"></div>
-<div class="det" id="det" role="dialog" aria-modal="true" aria-labelledby="dnom" tabindex="-1" hidden>
- <div class="dbar"><div><button class="volver" id="dback" type="button">← Volver al catálogo</button><span id="dcart"></span></div></div>
- <div class="dwrap" id="dwrap"></div>
-</div>
+<div class="det" id="det" hidden><div class="dsheet" id="dsheet" role="dialog" aria-modal="true" aria-labelledby="dnom" tabindex="-1"><button class="dx" id="dback" type="button" aria-label="Cerrar">×</button><div class="dwrap" id="dwrap"></div></div></div>
 <div class="scrim" id="scrim"></div>
 <aside class="cart" id="cart" role="dialog" aria-modal="true" aria-labelledby="ct" tabindex="-1">
  <div class="chead"><h2 id="ct">Tu carrito</h2><button class="x" id="cclose" aria-label="Cerrar carrito">×</button></div>
@@ -246,6 +247,7 @@ function pinta(){const r=resumen();
  document.querySelectorAll("[data-count]").forEach(e=>e.textContent=r.pz);
  document.querySelectorAll("[data-add]").forEach(e=>{const p=prod(e.dataset.add);if(p)e.innerHTML=addHTML(p)});
  $("#dock").innerHTML=r.pz?`<button class="btn wa" data-abrir type="button">${BOLSA}Ver carrito · ${r.pz} ${r.pz===1?"pieza":"piezas"} · ${mx(r.tot)}</button>`:ctaHTML();
+ if($("#dver"))$("#dver").innerHTML=r.pz?`<button class="vercart" data-abrir type="button">Ver carrito · ${r.pz} ${r.pz===1?"pieza":"piezas"}</button>`:"";
  if(!r.pz){$("#cbody").innerHTML='<div class="cempty"><b>Tu carrito está vacío</b>Agrega perfumes del catálogo.</div>';$("#cfoot").innerHTML='<button class="btn buy" id="seguir" type="button">Ver catálogo</button>';return}
  const falta=r.min-r.pz,ahorro=r.items.reduce((a,x)=>a+x.n*(x.p.menudeo-x.p.mayoreo),0),hint=r.may?`<p class="hint ok"><b>Te estás ahorrando ${mx(ahorro)}</b> por llevar más piezas.</p>`:`<p class="hint"><b>Agrega ${falta} ${falta===1?"pieza":"piezas"} más</b> y llévate todo a precio de mayoreo. Ahorrarías más de ${mx(ahorro)}.</p>`;
  const lista=r.items.map(x=>{const t=parts(x.p.nombre),u=r.may?x.p.mayoreo:x.p.menudeo;return `<div class="line"><img src="${esc(x.p.img)}" alt=""><div class="ln">${esc(t.name)}<small>${esc(t.brand)} · ${esc(t.ml)}</small></div><div class="lp">${r.may?`<s>${mx(x.p.menudeo*x.n)}</s>`:""}<span>${mx(u*x.n)}</span>${x.n>1?`<small>${mx(u)} c/u</small>`:""}</div>${stepHTML(x.p.id,x.n,x.p.stock)}<button class="rm" type="button" data-rm="${x.p.id}">Quitar</button></div>`}).join("");
@@ -259,8 +261,8 @@ function pinta(){const r=resumen();
 function liga(){const a=$("#comprar");if(a){a.href=ligaWA()||"#";if(intento){$("#fnom").setAttribute("aria-invalid",!nom.trim());$("#ftel").setAttribute("aria-invalid",!telOK());if($("#fdir"))$("#fdir").setAttribute("aria-invalid",!dir.trim())}if(nom.trim()&&telOK()&&entrega&&(entrega!=="pickup"||pago)&&(entrega!=="envio"||dir.trim())&&D.whatsapp)$("#cerr").hidden=true}}
 let viaApp=false;
 function verDetalle(id){const p=prod(id);if(!p)return;const t=parts(p.nombre),b=label(p.stock),c=INK[p.id%INK.length];
- $("#dwrap").innerHTML=`<section class="dtop">${p.notas?`<div class="dnota"><img src="${esc(p.notas)}" alt="Notas de ${esc(t.name)}"></div>`:`<div class="dpic">${p.img?`<img src="${esc(p.img)}" alt="${esc(p.nombre)}">`:bottle(c)}</div>`}<div class="dinfo"><span class="dbadge ${b[0]}">${b[1]}</span><span class="brand">${esc(t.brand)}</span><h2 class="name" id="dnom">${esc(t.name)}</h2><span class="ml">${esc(t.ml)}</span><div class="prices"><div><span>Menudeo</span><b>${mx(p.menudeo)}</b></div><div class="may"><span>Mayoreo</span><b>${mx(p.mayoreo)}</b></div></div><div class="addwrap" data-add="${p.id}">${addHTML(p)}</div>${p.notas?"":`<p class="dpron">Muy pronto verás aquí las notas de este perfume.</p>`}</div></section>`;
- const d=$("#det");d.hidden=false;void d.offsetWidth;d.classList.add("on");d.scrollTop=0;document.documentElement.style.overflow="hidden";d.focus()}
+ $("#dwrap").innerHTML=`<section class="dtop">${p.notas?`<div class="dnota"><img src="${esc(p.notas)}" alt="Notas de ${esc(t.name)}"></div>`:`<div class="dpic">${p.img?`<img src="${esc(p.img)}" alt="${esc(p.nombre)}">`:bottle(c)}</div>`}<div class="dinfo"><span class="dbadge ${b[0]}">${b[1]}</span><span class="brand">${esc(t.brand)}</span><h2 class="name" id="dnom">${esc(t.name)}</h2><span class="ml">${esc(t.ml)}</span><div class="prices"><div><span>Menudeo</span><b>${mx(p.menudeo)}</b></div><div class="may"><span>Mayoreo</span><b>${mx(p.mayoreo)}</b></div></div><div class="addwrap" data-add="${p.id}">${addHTML(p)}</div><div id="dver"></div>${p.notas?"":`<p class="dpron">Muy pronto verás aquí las notas de este perfume.</p>`}</div></section>`;
+ const d=$("#det");d.hidden=false;void d.offsetWidth;d.classList.add("on");$("#dwrap").scrollTop=0;document.documentElement.style.overflow="hidden";$("#dsheet").focus();pinta()}
 function ocultaDetalle(){const d=$("#det");if(d.hidden)return;d.classList.remove("on");d.hidden=true;if(!$("#cart").classList.contains("on"))document.documentElement.style.overflow=""}
 function abreHash(){const m=location.hash.match(/^#perfume-(\d+)$/);if(m)verDetalle(m[1]);else ocultaDetalle()}
 function salirDetalle(){if(viaApp){viaApp=false;history.back()}else{history.replaceState(null,"",location.pathname+location.search);ocultaDetalle()}}
@@ -290,10 +292,9 @@ function start(d){D=d;
  $("#q").oninput=e=>{q=e.target.value.toLowerCase();grid()};
  $("#sort").onchange=e=>{orden=e.target.value;grid()};
  $("#foot").textContent="Precios en pesos mexicanos. Disponibilidad sujeta a confirmación al hacer tu pedido.";
- $("#dcart").innerHTML=`<button class="cartbtn" data-abrir type="button" aria-label="Abrir carrito">${BOLSA}<span>Carrito</span><b data-count>0</b></button>`;
  grid();pinta();abreHash();addEventListener("hashchange",abreHash)}
 fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(start).catch(()=>{$("#grid").innerHTML='<p class="none" style="grid-column:1/-1">No se pudo cargar el catálogo. Recarga la página.</p>'});
-$("#dback").onclick=salirDetalle;document.addEventListener("keydown",e=>{const v=e.target.closest&&e.target.closest(".pic[data-ver]");if(v&&(e.key==="Enter"||e.key===" ")){e.preventDefault();v.click()}});
+$("#dback").onclick=salirDetalle;$("#det").onclick=e=>{if(e.target.id==="det")salirDetalle()};document.addEventListener("keydown",e=>{const v=e.target.closest&&e.target.closest(".pic[data-ver]");if(v&&(e.key==="Enter"||e.key===" ")){e.preventDefault();v.click()}});
 $("#cclose").onclick=cerrar;$("#scrim").onclick=cerrar;addEventListener("keydown",e=>{if(e.key==="Escape"){if($("#cart").classList.contains("on"))cerrar();else if(!$("#det").hidden)salirDetalle()}});
 $("#verCat").onclick=e=>{e.preventDefault();$("#catalogo").scrollIntoView()};
 new IntersectionObserver(e=>$("#dock").classList.toggle("on",!e[0].isIntersecting),{rootMargin:"-70px 0px 0px 0px"}).observe(document.querySelector(".hero"));
