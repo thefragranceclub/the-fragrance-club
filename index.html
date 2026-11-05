@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Jost:wght@400;500;600&display=swap">
 <style>
-/* Layout: tienda de microcemento. Muro gris con luz cálida, franja negro mate y nichos de concreto claro para cada frasco. Un solo look. */
+/* Layout: tienda de microcemento. Muro bronce con tira de luz ámbar, piso reflejante y perfumes de pie con contraluz. Un solo look. */
 :root{color-scheme:light;--bg:#EFEBE6;--panel:#F8F5F1;--ink:#141312;--soft:#625E59;--line:#D2CCC4;--black:#141312;--white:#FBF8F4;--warm:#E2C69B;--warm-ink:#74531F;--low-bg:#F4E5CB;--ok:#2F5D46;--ok-bg:#DFE9E2;--out:#68645F;--out-bg:#E2DED8;
 --sans:"Jost","Futura","Avenir Next","Segoe UI",system-ui,sans-serif;--serif:"Bodoni Moda","Bodoni 72","Didot",Georgia,serif}
 *{box-sizing:border-box}
@@ -25,10 +25,10 @@ a{color:inherit}
 .ghost{text-align:center;background:transparent;color:var(--white);padding:14px 26px;font-size:16px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.65)}
 .ghost:hover{background:rgba(255,255,255,.14)}
 .btn:focus-visible,#q:focus-visible,#sort:focus-visible,.seg button:focus-visible{outline:2px solid var(--warm-ink);outline-offset:3px}
-.hero{position:relative;overflow:hidden;isolation:isolate;background:#6F6E6B url(img/concreto.webp) center/cover;padding-block:64px 74px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));color:var(--white)}
-.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(255,226,180,.2),transparent 24%),linear-gradient(90deg,rgba(18,17,16,.58),rgba(18,17,16,.1) 52%,rgba(18,17,16,.32))}
-.light{position:absolute;z-index:-1;top:-30%;left:44%;width:62%;height:150%;background:radial-gradient(closest-side,rgba(255,219,166,.5),transparent);filter:blur(10px);animation:sweep 18s ease-in-out infinite alternate}
-@keyframes sweep{from{transform:translateX(-5%);opacity:.75}to{transform:translateX(6%);opacity:1}}
+.hero{position:relative;overflow:hidden;isolation:isolate;background:#4A352A url(img/muro.webp) var(--bx,0) var(--by,100%)/var(--bs,cover) no-repeat;padding-block:64px 74px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));color:var(--white)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,transparent 0,rgba(26,17,12,.34) 22%,rgba(26,17,12,.06) 56%,transparent)}
+.light{display:none}
+@keyframes respira{from{opacity:.78}to{opacity:1}}
 .hgrid{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px;align-items:center}
 h1{margin:0}
 h1 img{display:block;width:min(100%,430px);height:auto}
@@ -36,14 +36,19 @@ h1 img{display:block;width:min(100%,430px);height:auto}
 .lede{font-size:18px;margin:12px 0 0;max-width:27em;color:#F0EBE4}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .stage{position:relative;height:430px}
-.stage img,.stage svg{position:absolute;height:auto;object-fit:contain;filter:drop-shadow(0 24px 22px rgba(0,0,0,.5))}
-.b1{width:51%;left:3%;top:50%;transform:translateY(-50%);z-index:3;animation:float 9s ease-in-out infinite}
-.b2{width:45%;left:51%;top:50%;transform:translateY(-50%);z-index:3;animation:float 9s ease-in-out -4s infinite}
-.b3{width:26%;left:-2%;top:55%;transform:rotate(-14deg);z-index:1;animation:float 10s ease-in-out -2s infinite}
-.b4{width:24%;left:-1%;top:15%;transform:rotate(-14deg);z-index:2;animation:float 11s ease-in-out -5s infinite}
-.b5{width:24%;right:-2%;top:13%;transform:rotate(16deg);z-index:2;animation:float 10s ease-in-out -1s infinite}
-.b6{width:26%;right:-2%;top:54%;transform:rotate(16deg);z-index:1;animation:float 11s ease-in-out -4s infinite}
-@keyframes float{50%{translate:0 -6px}}
+.stage::before{content:"";position:absolute;z-index:0;left:-8%;right:-8%;top:2%;bottom:6%;pointer-events:none;background:radial-gradient(50% 58% at 50% 58%,rgba(255,182,112,.5),transparent 74%);filter:blur(16px);animation:respira 8s ease-in-out infinite alternate}
+.pz{position:absolute;margin:0;width:var(--w);left:var(--x);bottom:var(--y);z-index:var(--z)}
+.pz>img{display:block;width:100%;height:auto;position:relative;z-index:1;filter:var(--tono) drop-shadow(0 0 1.5px rgba(255,214,164,.6)) drop-shadow(0 0 16px rgba(255,176,104,.34))}
+.pz .ref{position:absolute;left:0;top:100%;margin-top:-1px;z-index:0;transform:scaleY(-1);opacity:.3;filter:blur(1.2px) saturate(.85);-webkit-mask-image:linear-gradient(0deg,#000,transparent 38%);mask-image:linear-gradient(0deg,#000,transparent 38%)}
+.pz::after{content:"";position:absolute;left:3%;right:3%;bottom:-5px;height:12px;z-index:0;border-radius:50%;background:rgba(18,10,6,.68);filter:blur(7px)}
+.pz.atras{--tono:brightness(.8) saturate(.92)}
+.pz.frente{--tono:brightness(1.02)}
+.p1{--w:35%;--x:-2%;--y:21%;--z:1}
+.p2{--w:37%;--x:19%;--y:23%;--z:2}
+.p3{--w:43%;--x:9%;--y:3%;--z:4}
+.p4{--w:41%;--x:50%;--y:3%;--z:4}
+.p5{--w:36%;--x:45%;--y:23%;--z:2}
+.p6{--w:37%;--x:66%;--y:21%;--z:1}
 .tape{overflow:hidden;background:var(--black);color:var(--white);padding-block:13px}
 .tape div{display:flex;width:max-content;animation:tape 60s linear infinite}
 .tape span{font-family:var(--serif);font-size:21px;padding-inline:24px;white-space:nowrap}
@@ -66,7 +71,7 @@ h2{font-family:var(--serif);font-size:clamp(34px,5.4vw,50px);font-weight:500;lin
 .item{--rx:0deg;--ry:0deg;--mx:50%;--my:30%;position:relative;background:var(--panel);overflow:hidden;transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .25s ease-out,box-shadow .35s;min-width:0;animation:rise .7s ease both;animation-delay:calc(var(--i)*45ms)}
 @keyframes rise{from{opacity:.3;translate:0 18px}}
 .item:hover{box-shadow:0 20px 44px rgba(40,34,26,.2)}
-.pic{height:250px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(60% 70% at var(--mx) var(--my),rgba(255,231,194,.62),transparent 72%),#CFCBC5 url(img/concreto-claro.webp) center/cover}
+.pic{height:250px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(60% 70% at var(--mx) var(--my),rgba(255,214,164,.3),transparent 72%),#6E5848 url(img/fondo-perfume.webp) left 62%/cover}
 .pic img,.pic svg{width:84%;height:182px;object-fit:contain;margin-top:14px;filter:drop-shadow(0 14px 12px rgba(30,26,20,.42));transition:transform .5s ease}
 .item:hover .pic img,.item:hover .pic svg{transform:translateY(-6px) scale(1.04)}
 .badge{position:absolute;top:12px;left:12px;z-index:1;font-size:13px;font-weight:500;letter-spacing:.02em;padding:3px 10px;background:var(--ok-bg);color:var(--ok)}
@@ -80,7 +85,7 @@ h2{font-family:var(--serif);font-size:clamp(34px,5.4vw,50px);font-weight:500;lin
 .prices b{font-size:23px;font-weight:500}
 .item.off .pic img,.item.off .pic svg{filter:grayscale(1);opacity:.6}
 .none{text-align:center;color:var(--soft);padding:50px 0}
-.end{position:relative;overflow:hidden;text-align:center;padding:62px 22px;background:#262523 url(img/concreto.webp) center/cover;color:var(--white);box-shadow:inset 0 0 0 2000px rgba(16,15,14,.62)}
+.end{position:relative;overflow:hidden;text-align:center;padding:62px 22px;background:#4A352A url(img/muro.webp) left center/cover;color:var(--white);box-shadow:inset 0 0 0 2000px rgba(30,20,14,.44)}
 .end .btn{margin-top:22px;background:var(--white);color:var(--black)}
 .endcta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}.end .endcta .btn{margin-top:0}.end .ghost{background:transparent;color:var(--white)}.end .ghost:hover{background:rgba(255,255,255,.14)}
 .end p{margin:8px 0 0;color:#E6E0D9}
@@ -154,7 +159,7 @@ footer img{height:56px;width:auto}
 .dx:focus-visible{outline:2px solid var(--warm-ink);outline-offset:2px}
 .dwrap{min-height:0;overflow-y:auto;overscroll-behavior:contain}
 .dtop{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:stretch}
-.dpic{min-height:430px;display:grid;place-items:center;background:#CFCBC5 url(img/concreto-claro.webp) center/cover}
+.dpic{min-height:430px;display:grid;place-items:center;background:#6E5848 url(img/fondo-perfume.webp) left 62%/cover}
 .dpic img,.dpic svg{width:80%;max-height:360px;object-fit:contain;filter:drop-shadow(0 16px 14px rgba(30,26,20,.42))}
 .dinfo{display:grid;gap:3px;align-content:center;padding:34px 30px}
 .dinfo .name{font-size:clamp(30px,3.6vw,38px);line-height:1.08}
@@ -274,6 +279,8 @@ function masHTML(p){if(!p.piramide&&!p.uso)return"";
  let uso="";if(p.uso){const E=[["Invierno",p.uso.invierno],["Primavera",p.uso.primavera],["Verano",p.uso.verano],["Otoño",p.uso.otono]],M=[["Día",p.uso.dia],["Noche",p.uso.noche]],max=Math.max(...E.concat(M).map(x=>x[1])),maxE=Math.max(...E.map(x=>x[1])),mej=E.filter(x=>x[1]>=maxE*.8).map(x=>x[0].toLowerCase()).join(", ").replace(/, ([^,]+)$/," y $1"),mom=M[0][1]>=M[1][1]*.8&&M[1][1]>=M[0][1]*.8?"de día o de noche":M[1][1]>M[0][1]?"de noche":"de día";
  uso=`<div><h3>Cuándo usarlo</h3><p class="ideal">Mejor en ${esc(mej)}, ${mom}.</p><div class="usos">${E.concat(M).map(([t,v])=>`<div class="uso"><span>${t}</span><div class="ubar"><i style="width:${v/max*100}%"></i></div></div>`).join("")}</div></div>`}
  return `<section class="dmas">${niv}${uso}</section>`}
+function colocaMuro(){const h=document.querySelector(".hero"),st=$("#stage");if(!h||!st)return;const hW=h.offsetWidth,hH=h.offsetHeight,hz=st.offsetTop+st.offsetHeight*.84,R=.6997,A=3840/1279;let H=Math.max(hz/R,hW/A);if(hW>900)H=Math.max(H,(hH-hz)/(1-R));h.style.setProperty("--bs","auto "+Math.ceil(H)+"px");h.style.setProperty("--by",Math.round(hz-R*H)+"px");h.style.setProperty("--bx",hW<=900?Math.round(-.034*H*A)+"px":"0")}
+addEventListener("resize",colocaMuro);addEventListener("load",colocaMuro);
 let viaApp=false,turno=0,cierre=0;
 const NOTAS={};
 function notaImg(src){let i=NOTAS[src];if(i)return i;i=NOTAS[src]=new Image();i.decoding="async";i.src=src;i.listo=i.decode().catch(()=>{}).then(()=>{i.ok=true});return i}
@@ -302,8 +309,8 @@ function start(d){D=d;
  Object.keys(C).forEach(id=>{const p=prod(id);if(!p||p.stock<=0)delete C[id];else C[id]=Math.min(C[id],p.stock)});
  $("#ctaTop").innerHTML=`<button class="cartbtn" data-abrir type="button" aria-label="Abrir carrito">${BOLSA}<span>Carrito</span><b data-count>0</b></button>`;$("#ctaHero").innerHTML=ctaHTML();$("#ctaEnd").innerHTML=ctaHTML();
  const com=d.comunidad?`<a class="btn ghost" href="${esc(d.comunidad)}" target="_blank" rel="noopener">${WI}<span>Únete al grupo de WhatsApp, sé parte de la comunidad</span></a>`:"";$("#comHero").innerHTML=com;$("#comEnd").innerHTML=com;
- const pick=(id,c,k)=>{const p=d.productos.find(x=>x.id===id);return p&&p.img?`<img class="${k}" src="${esc(p.img)}" alt="">`:bottle(c,k)};
- $("#stage").innerHTML=pick(11,INK[0],"b3")+pick(7,INK[5],"b4")+pick(2,INK[1],"b5")+pick(4,INK[0],"b6")+pick(17,INK[4],"b1")+pick(1,INK[1],"b2");
+ const pick=(id,c,k)=>{const p=d.productos.find(x=>x.id===id);if(!p||!p.img)return"";return `<figure class="pz ${k}"><img src="${esc(p.img)}" alt=""><img class="ref" src="${esc(p.img)}" alt=""></figure>`};
+ $("#stage").innerHTML=pick(7,0,"atras p1")+pick(11,0,"atras p2")+pick(4,0,"atras p6")+pick(2,0,"atras p5")+pick(17,0,"frente p3")+pick(1,0,"frente p4");colocaMuro();
  const brands=[...new Set(d.productos.map(p=>parts(p.nombre).brand).filter(Boolean))],t=brands.concat(brands,brands).map(b=>`<span>${esc(b)}</span>`).join("");$("#tape").innerHTML=t+t;
  $("#seg").innerHTML=["Todos","Mujer","Hombre"].map(c=>`<button data-c="${c}" aria-pressed="${c===cat}">${c}</button>`).join("");
  document.querySelectorAll("[data-c]").forEach(b=>b.onclick=()=>{cat=b.dataset.c;document.querySelectorAll("[data-c]").forEach(x=>x.setAttribute("aria-pressed",x===b));grid()});
