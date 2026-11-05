@@ -127,6 +127,32 @@
    "mayoreo": 590,
    "img": "img/7.webp",
    "notas": "img/notas-7.webp",
+   "piramide": {
+    "salida": [
+     "Manzana",
+     "Canela",
+     "Lavanda silvestre",
+     "Bergamota"
+    ],
+    "corazon": [
+     "Flor de azahar del naranjo",
+     "Lirio de los valles (muguete)"
+    ],
+    "base": [
+     "Vainilla",
+     "Haba tonka",
+     "Ámbar",
+     "Pachulí"
+    ]
+   },
+   "uso": {
+    "invierno": 13700,
+    "primavera": 7100,
+    "verano": 3100,
+    "otono": 11500,
+    "dia": 5700,
+    "noche": 12500
+   },
    "stock": 5
   },
   {
