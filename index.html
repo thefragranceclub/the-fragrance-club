@@ -158,10 +158,12 @@ footer img{height:56px;width:auto}
 .dinfo .name{font-size:clamp(31px,4.4vw,42px);line-height:1.08}
 .dinfo .ml{font-size:16px}
 .dinfo .prices b{font-size:28px}
-.dnotas{display:grid;gap:12px;padding-top:24px;border-top:1px solid var(--line)}
-.dnotas h2{font-size:clamp(28px,4vw,36px)}
-.dnotas img{display:block;width:100%;height:auto}
-.dnotas p{margin:0;color:var(--soft)}
+.dnota{background:#fff}
+.dnota img{display:block;width:100%;height:auto}
+.dbadge{justify-self:start;font-size:13px;font-weight:500;padding:3px 10px;margin-bottom:9px;background:var(--ok-bg);color:var(--ok)}
+.dbadge.low{background:var(--low-bg);color:var(--warm-ink)}
+.dbadge.out{background:var(--out-bg);color:var(--out)}
+.dpron{margin:10px 0 0;color:var(--soft);font-size:14.5px}
 @media (max-width:760px){.dtop{grid-template-columns:minmax(0,1fr);gap:16px}.dpic{min-height:290px}.dpic img,.dpic svg{max-height:250px}.dwrap{padding-block:16px 40px}}
 .dock{display:none}
 .reveal{transition:transform .8s ease}.reveal.pre{transform:translateY(20px)}
@@ -257,7 +259,7 @@ function pinta(){const r=resumen();
 function liga(){const a=$("#comprar");if(a){a.href=ligaWA()||"#";if(intento){$("#fnom").setAttribute("aria-invalid",!nom.trim());$("#ftel").setAttribute("aria-invalid",!telOK());if($("#fdir"))$("#fdir").setAttribute("aria-invalid",!dir.trim())}if(nom.trim()&&telOK()&&entrega&&(entrega!=="pickup"||pago)&&(entrega!=="envio"||dir.trim())&&D.whatsapp)$("#cerr").hidden=true}}
 let viaApp=false;
 function verDetalle(id){const p=prod(id);if(!p)return;const t=parts(p.nombre),b=label(p.stock),c=INK[p.id%INK.length];
- $("#dwrap").innerHTML=`<section class="dtop"><div class="dpic"><span class="badge ${b[0]}">${b[1]}</span>${p.img?`<img src="${esc(p.img)}" alt="${esc(p.nombre)}">`:bottle(c)}</div><div class="dinfo"><span class="brand">${esc(t.brand)}</span><h2 class="name" id="dnom">${esc(t.name)}</h2><span class="ml">${esc(t.ml)}</span><div class="prices"><div><span>Menudeo</span><b>${mx(p.menudeo)}</b></div><div class="may"><span>Mayoreo</span><b>${mx(p.mayoreo)}</b></div></div><div class="addwrap" data-add="${p.id}">${addHTML(p)}</div></div></section><section class="dnotas"><h2>Notas</h2>${p.notas?`<img src="${esc(p.notas)}" alt="Notas de ${esc(t.name)}" loading="lazy">`:"<p>Muy pronto verás aquí las notas de este perfume.</p>"}</section>`;
+ $("#dwrap").innerHTML=`<section class="dtop">${p.notas?`<div class="dnota"><img src="${esc(p.notas)}" alt="Notas de ${esc(t.name)}"></div>`:`<div class="dpic">${p.img?`<img src="${esc(p.img)}" alt="${esc(p.nombre)}">`:bottle(c)}</div>`}<div class="dinfo"><span class="dbadge ${b[0]}">${b[1]}</span><span class="brand">${esc(t.brand)}</span><h2 class="name" id="dnom">${esc(t.name)}</h2><span class="ml">${esc(t.ml)}</span><div class="prices"><div><span>Menudeo</span><b>${mx(p.menudeo)}</b></div><div class="may"><span>Mayoreo</span><b>${mx(p.mayoreo)}</b></div></div><div class="addwrap" data-add="${p.id}">${addHTML(p)}</div>${p.notas?"":`<p class="dpron">Muy pronto verás aquí las notas de este perfume.</p>`}</div></section>`;
  const d=$("#det");d.hidden=false;void d.offsetWidth;d.classList.add("on");d.scrollTop=0;document.documentElement.style.overflow="hidden";d.focus()}
 function ocultaDetalle(){const d=$("#det");if(d.hidden)return;d.classList.remove("on");d.hidden=true;if(!$("#cart").classList.contains("on"))document.documentElement.style.overflow=""}
 function abreHash(){const m=location.hash.match(/^#perfume-(\d+)$/);if(m)verDetalle(m[1]);else ocultaDetalle()}
