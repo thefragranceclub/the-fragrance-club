@@ -19,4 +19,5 @@ subprocess.run(['python3','/home/claude/tienda/seo.py'],check=True)
 # Respaldo de herramientas en el repositorio (sin datos privados).
 import os
 os.makedirs('/home/claude/the-fragrance-club/herramientas',exist_ok=True)
-for x in ('sync.py','seo.py','tfc-trazo.txt'): shutil.copy('/home/claude/tienda/'+x,'/home/claude/the-fragrance-club/herramientas/'+x)
+subprocess.run(['python3','/home/claude/tienda/respaldo.py'],check=True)
+for x in ('sync.py','seo.py','respaldo.py','tfc-trazo.txt'): shutil.copy('/home/claude/tienda/'+x,'/home/claude/the-fragrance-club/herramientas/'+x)
