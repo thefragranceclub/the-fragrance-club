@@ -1,0 +1,15 @@
+:root{--bg:#EFEBE6;--panel:#F8F5F1;--ink:#141312;--soft:#625E59;--line:#D2CCC4;--ok:#2F5D46;--serif:"Bodoni Moda","Bodoni 72","Didot",Georgia,serif;--sans:"Jost","Futura","Avenir Next","Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box}html{-webkit-font-smoothing:antialiased}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--sans);overflow-x:clip}a{color:inherit}img{max-width:100%}
+.top{background:var(--panel);border-bottom:1px solid var(--line)}.in{width:min(1040px,100%);margin:auto;padding-inline:20px}.top .in{display:flex;align-items:center;justify-content:space-between;min-height:68px}.top img{display:block;height:46px;width:auto}.top a.cat{font-size:15px;font-weight:500}
+.ruta{font-size:14px;color:var(--soft);padding-block:20px 0}.ruta a{color:inherit}
+h1{font:500 clamp(36px,6vw,54px)/1.08 var(--serif);margin:10px 0 8px;text-wrap:balance}h2{font:500 28px/1.15 var(--serif);margin:0 0 10px}
+.sub{color:var(--soft);margin:0 0 22px}.intro{max-width:720px;margin:0 0 26px}
+.ficha{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:36px;padding-block:8px 44px;align-items:start}.foto{background:#6E5848 url(/img/fondo-perfume.webp) left 62%/cover;display:grid;place-items:center;aspect-ratio:1.08}.foto img{width:84%;height:80%;object-fit:contain;filter:drop-shadow(0 14px 12px rgba(30,26,20,.42))}
+.pre{display:flex;gap:36px;margin:18px 0}.pre span{display:block;font-size:14px;color:var(--soft)}.pre b{font-weight:500;font-size:28px}.disp{color:var(--ok);font-weight:500}.agot{color:var(--soft);font-weight:500}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:500;padding:14px 18px;margin-top:10px;border:1px solid var(--ink)}.btn.a{background:var(--ink);color:#FBF8F4}
+.notas{padding:0;list-style:none;margin:0}.notas li{padding:9px 0;border-top:1px solid var(--line)}.notas b{font-weight:500}
+.bloque{padding-block:30px;border-top:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-bottom:44px}.card{background:var(--panel);text-decoration:none;display:block}.card .ph{height:190px;background:#6E5848 url(/img/fondo-perfume.webp) left 62%/cover;display:grid;place-items:center}.card img{width:84%;height:150px;object-fit:contain}.card div.t{padding:12px 14px 15px}.card small{display:block;color:var(--soft);font-size:13px}.card b{font:500 21px/1.18 var(--serif);display:block}.card span{font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}.chips a{display:block;border:1px solid var(--line);padding:6px 12px;font-size:15px;text-decoration:none}
+footer{text-align:center;color:var(--soft);font-size:14px;padding:30px 20px 44px;border-top:1px solid var(--line)}
+@media(max-width:760px){.ficha{grid-template-columns:1fr;gap:20px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card .ph{height:150px}.card img{height:118px}.card b{font-size:18px}}
