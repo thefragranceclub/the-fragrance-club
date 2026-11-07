@@ -337,7 +337,12 @@ function start(d){D=d;
  $("#sort").onchange=e=>{orden=e.target.value;grid()};
  $("#foot").textContent="Precios en pesos mexicanos. Disponibilidad sujeta a confirmación al hacer tu pedido.";
  grid();pinta();abreHash();addEventListener("hashchange",abreHash)}
-fetch("data.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(start).then(precarga).catch(()=>{$("#grid").innerHTML='<p class="none" style="grid-column:1/-1">No se pudo cargar el catálogo. Recarga la página.</p>'});
+const traeDatos=()=>fetch("data.json?v="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()});
+/* Si la pestaña estuvo abierta un rato, vuelve a leer número, precios y stock antes de que el cliente pida. */
+let ultimaCarga=Date.now();
+function actualiza(){if(!D||Date.now()-ultimaCarga<20000)return;ultimaCarga=Date.now();traeDatos().then(d=>{D=d;Object.keys(C).forEach(id=>{const p=prod(id);if(!p||p.stock<=0)delete C[id];else C[id]=Math.min(C[id],p.stock)});guarda();$("#ctaHero").innerHTML=ctaHTML();$("#ctaEnd").innerHTML=ctaHTML();grid();pinta()}).catch(()=>{})}
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")actualiza()});addEventListener("pageshow",e=>{if(e.persisted)actualiza()});addEventListener("focus",actualiza);
+traeDatos().then(start).then(precarga).catch(()=>{$("#grid").innerHTML='<p class="none" style="grid-column:1/-1">No se pudo cargar el catálogo. Recarga la página.</p>'});
 (function(){const sh=$("#dsheet"),wr=$("#dwrap");let y0=0,t0=0,dy=0,listo=false,arrastra=false;
  const suelta=()=>{listo=false;if(!arrastra)return;arrastra=false;sh.style.transition="";const rapido=dy/(Date.now()-t0)>.5&&dy>40;if(dy>Math.min(140,sh.offsetHeight*.25)||rapido){sh.style.transform="translateY(100%)";setTimeout(salirDetalle,240)}else sh.style.transform=""};
  sh.addEventListener("touchstart",e=>{if(innerWidth>760||e.touches.length>1)return;listo=wr.scrollTop<=0;y0=e.touches[0].clientY;t0=Date.now();dy=0;arrastra=false},{passive:true});
