@@ -4,7 +4,7 @@
  "comunidad": "https://chat.whatsapp.com/JG6rmJX6wkm3izOZ8E42wO?s=sh&p=i&mlu=4&ilr=4&iam=2",
  "mayoreoMin": 4,
  "costoEnvio": 100,
- "actualizado": "2026-11-04",
+ "actualizado": "2026-11-06",
  "productos": [
   {
    "id": 1,
@@ -464,7 +464,7 @@
     "dia": 2700,
     "noche": 8100
    },
-   "stock": 1
+   "stock": 0
   },
   {
    "id": 14,
