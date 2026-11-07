@@ -26,8 +26,8 @@ n=len(PS);fin=n+1
 tabla(C,['Fecha','ID','Perfume','Piezas','Costo por pieza','Total','Plataforma','Pedido'],[[fe(c['fecha']),c['producto'],nom[c['producto']],c['piezas'],c['costo'],f'=D{i}*E{i}',c.get('plataforma') or 'Sin registrar',c.get('origen','')] for i,c in enumerate(d['compras'],2)],[12,6,46,8,12,12,16,20],{1:'dd/mm/yyyy',5:M,6:M},entrada=(4,5))
 filas=[]
 for i,v in enumerate(d['ventas'],2):
-    filas.append([fe(v['fecha']),v.get('pedido',''),v['producto'],nom.get(v['producto'],'Producto'),v['piezas'],v['tipo'],v['precio'],f'=E{i}*G{i}',v.get('envio',0),v.get('otros',0),f'=H{i}-E{i}*INDEX(Perfumes!$I$2:$I${fin},MATCH(C{i},Perfumes!$A$2:$A${fin},0))-J{i}',v.get('cliente',''),v.get('telefono',''),v.get('pago','')])
-tabla(V,['Fecha','Pedido','ID','Perfume','Piezas','Tipo','Precio','Total','Envío cobrado','Otros costos','Ganancia','Cliente','Teléfono','Pago'],filas,[12,12,6,46,8,10,10,12,10,10,12,24,14,16],{1:'dd/mm/yyyy',7:M,8:M,9:M,10:M,11:M},entrada=(5,7,9,10))
+    filas.append([fe(v['fecha']),v.get('pedido',''),v['producto'],nom.get(v['producto'],'Producto'),v['piezas'],v['tipo'],v['precio'],f'=E{i}*G{i}',v.get('envio',0),v.get('otros',0),f'=H{i}-E{i}*INDEX(Perfumes!$I$2:$I${fin},MATCH(C{i},Perfumes!$A$2:$A${fin},0))-J{i}',v.get('cliente',''),v.get('telefono',''),v.get('pago',''),v.get('vendedor','')])
+tabla(V,['Fecha','Pedido','ID','Perfume','Piezas','Tipo','Precio','Total','Envío cobrado','Otros costos','Ganancia','Cliente','Teléfono','Pago','Vendedor'],filas,[12,12,6,46,8,10,10,12,10,10,12,24,14,16,14],{1:'dd/mm/yyyy',7:M,8:M,9:M,10:M,11:M},entrada=(5,7,9,10))
 if not filas: V['A2']='Todavía no hay ventas.';V['A2'].font=S
 fp=[[p['id'],p['nombre'],p['categoria'],p['menudeo'],p['mayoreo'],f'=SUMIFS(Compras!$D$2:$D$5000,Compras!$B$2:$B$5000,A{i})',f'=SUMIFS(Ventas!$E$2:$E$5000,Ventas!$C$2:$C$5000,A{i})',f'=F{i}-G{i}',f'=IFERROR(SUMPRODUCT((Compras!$B$2:$B$5000=A{i})*Compras!$D$2:$D$5000*Compras!$E$2:$E$5000)/F{i},0)',f'=D{i}-I{i}',f'=E{i}-I{i}',f'=IFERROR(J{i}/I{i},0)',f'=IFERROR(K{i}/I{i},0)'] for i,p in enumerate(PS,2)]
 tabla(Pf,['ID','Perfume','Categoría','Menudeo','Mayoreo','Compradas','Vendidas','Stock','Costo promedio','Ganancia menudeo','Ganancia mayoreo','Rendimiento menudeo','Rendimiento mayoreo'],fp,[6,46,11,11,11,11,10,8,12,12,12,13,13],{4:M,5:M,9:M,10:M,11:M,12:P,13:P},entrada=(4,5))
@@ -45,6 +45,11 @@ K=[('Inversión','=SUM(Compras!F2:F5000)',M),('Ventas cobradas','=SUM(Ventas!H2:
 for i,(a,f,x) in enumerate(K,4):
     R.cell(i,1,a).font=N;c=R.cell(i,2,f);c.font=B;c.number_format=x
 R.column_dimensions['A'].width=34;R.column_dimensions['B'].width=16
+V2=[]
+for n in d.get('vendedores',[]):V2.append(n)
+R['A15']='Ventas por vendedor';R['A15'].font=B
+for i,n in enumerate(V2,16):
+    R.cell(i,1,n).font=N;c=R.cell(i,2,f'=SUMIFS(Ventas!H2:H5000,Ventas!O2:O5000,A{i})');c.font=B;c.number_format=M
 R['A14']='Los envíos cobrados van aparte de la ganancia. Los números en azul son datos capturados; el resto se calcula solo.';R['A14'].font=S
 wb.save(SALIDA)
 r=json.loads(subprocess.run(['python3',RECALC,SALIDA,'60'],capture_output=True,text=True).stdout)
