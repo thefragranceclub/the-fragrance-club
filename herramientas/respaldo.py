@@ -51,6 +51,8 @@ R['A15']='Ventas por vendedor';R['A15'].font=B
 for i,n in enumerate(V2,16):
     R.cell(i,1,n).font=N;c=R.cell(i,2,f'=SUMIFS(Ventas!H2:H5000,Ventas!O2:O5000,A{i})');c.font=B;c.number_format=M
 R['A14']='Los envíos cobrados van aparte de la ganancia. Los números en azul son datos capturados; el resto se calcula solo.';R['A14'].font=S
+Rb=wb.create_sheet('Reembolsos')
+tabla(Rb,['Fecha compra','ID','Perfume','Piezas','Costo por pieza','Total','Plataforma','Fecha reembolso','Motivo'],[[fe(c['fecha']),c['producto'],nom[c['producto']],c['piezas'],c['costo'],f'=D{i}*E{i}',c.get('plataforma',''),fe(c['reembolso']),c.get('motivo','')] for i,c in enumerate(d.get('reembolsos',[]),2)],[12,6,46,8,12,12,16,14,40],{1:'dd/mm/yyyy',5:M,6:M,8:'dd/mm/yyyy'})
 wb.save(SALIDA)
 r=json.loads(subprocess.run(['python3',RECALC,SALIDA,'60'],capture_output=True,text=True).stdout)
 assert r.get('status')=='success',r
