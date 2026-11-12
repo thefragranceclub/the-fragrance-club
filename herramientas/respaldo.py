@@ -41,16 +41,18 @@ tabla(Cl,['Cliente','Teléfono','Piezas','Total comprado','Última compra'],[[o[
 if not m: Cl['A2']='Todavía no hay clientes.';Cl['A2'].font=S
 R['A1']='The Fragrance Club';R['A1'].font=T
 R['A2']=f"Respaldo privado · datos al {datetime.date.today().strftime('%d/%m/%Y')}. No compartir: incluye costos y clientes.";R['A2'].font=S
-K=[('Inversión','=SUM(Compras!F2:F5000)',M),('Ventas cobradas','=SUM(Ventas!H2:H5000)',M),('Ganancia real','=SUM(Ventas!K2:K5000)',M),('Entró por envíos','=SUM(Ventas!I2:I5000)',M),('Piezas compradas',f'=SUM(Perfumes!F2:F{fin})','0'),('Piezas vendidas',f'=SUM(Perfumes!G2:G{fin})','0'),('Piezas en stock',f'=SUM(Perfumes!H2:H{fin})','0'),('Ganancia posible a menudeo',f'=SUMPRODUCT(Perfumes!H2:H{fin},Perfumes!J2:J{fin})',M),('Ganancia posible a mayoreo',f'=SUMPRODUCT(Perfumes!H2:H{fin},Perfumes!K2:K{fin})',M)]
+K=[('Inversión','=SUM(Compras!F2:F5000)',M),('Ventas cobradas','=SUM(Ventas!H2:H5000)',M),('Ganancia real','=SUM(Ventas!K2:K5000)',M),('Gastos','=SUM(Gastos!C2:C5000)',M),('Ganancia neta','=B6-B7',M),('Entró por envíos','=SUM(Ventas!I2:I5000)',M),('Piezas compradas',f'=SUM(Perfumes!F2:F{fin})','0'),('Piezas vendidas',f'=SUM(Perfumes!G2:G{fin})','0'),('Piezas en stock',f'=SUM(Perfumes!H2:H{fin})','0'),('Ganancia posible a menudeo',f'=SUMPRODUCT(Perfumes!H2:H{fin},Perfumes!J2:J{fin})',M),('Ganancia posible a mayoreo',f'=SUMPRODUCT(Perfumes!H2:H{fin},Perfumes!K2:K{fin})',M)]
 for i,(a,f,x) in enumerate(K,4):
     R.cell(i,1,a).font=N;c=R.cell(i,2,f);c.font=B;c.number_format=x
 R.column_dimensions['A'].width=34;R.column_dimensions['B'].width=16
 V2=[]
 for n in d.get('vendedores',[]):V2.append(n)
-R['A15']='Ventas por vendedor';R['A15'].font=B
-for i,n in enumerate(V2,16):
+R['A18']='Ventas por vendedor';R['A18'].font=B
+for i,n in enumerate(V2,19):
     R.cell(i,1,n).font=N;c=R.cell(i,2,f'=SUMIFS(Ventas!H2:H5000,Ventas!O2:O5000,A{i})');c.font=B;c.number_format=M
-R['A14']='Los envíos cobrados van aparte de la ganancia. Los números en azul son datos capturados; el resto se calcula solo.';R['A14'].font=S
+R['A16']='Los envíos cobrados van aparte de la ganancia. Los números en azul son datos capturados; el resto se calcula solo.';R['A16'].font=S
+G=wb.create_sheet('Gastos')
+tabla(G,['Fecha','Concepto','Monto','Nota'],[[fe(g['fecha']),g['concepto'],g['monto'],g.get('nota','')] for g in d.get('gastos',[])],[12,20,12,30],{1:'dd/mm/yyyy',3:M},entrada=(3,))
 Rb=wb.create_sheet('Reembolsos')
 tabla(Rb,['Fecha compra','ID','Perfume','Piezas','Costo por pieza','Total','Plataforma','Fecha reembolso','Motivo'],[[fe(c['fecha']),c['producto'],nom[c['producto']],c['piezas'],c['costo'],f'=D{i}*E{i}',c.get('plataforma',''),fe(c['reembolso']),c.get('motivo','')] for i,c in enumerate(d.get('reembolsos',[]),2)],[12,6,46,8,12,12,16,14,40],{1:'dd/mm/yyyy',5:M,6:M,8:'dd/mm/yyyy'})
 wb.save(SALIDA)
